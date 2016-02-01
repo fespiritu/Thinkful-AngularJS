@@ -1,0 +1,87 @@
+/* Styles go here */
+
+.bigBox {
+    border:3px solid;
+}
+.underline {
+  text-decoration: underline;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div.solid {
+    /* border: 3px solid; */
+    height: 200px;
+}
+table {
+    width: 100%;
+    border-spacing: 0;
+   /* border: 3px solid; */
+}
+tr {
+    border: 1px solid; 
+}
+td h1 {
+    padding-left: 100px;
+}
+.bigFont {
+    font-size: 50px;
+}
+.logo1 {
+    text-align: center;
+    border: 3px solid;
+    float: left;
+   width: 20%;;
+   line-height: 30px;
+}
+
+.logo2 {
+   border: 3px solid;
+    float:right;
+    width:70.5%;
+    line-height: 66px;
+    padding-left: 100px;
+  
+}
+.clearfix {
+    overflow: auto;
+}
+#provide {
+ 
+    padding-left: 100px;
+}
+.entry{
+  padding-left: 50px;
+ overflow: auto;
+}
+.floating-box {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    border: 3px ; 
+    padding-left: 150px;
+    
+}
+.container {
+    border: 3px solid;
+    display: table-row;
+  
+}
+
+.row {
+    display: table-row;
+}
+
+.left, .right {
+    display: table-cell;
+    padding-right: 25px;
+}
+.middle{
+    text-align: center;
+}
+.workArea {
+    /*border: solid; */
+    padding-left: 300px;
+    margin: auto;
+}
