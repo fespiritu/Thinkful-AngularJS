@@ -1,21 +1,30 @@
 
-/* THIS DOESN'T WORK SOMEHOW. POSSIBLY HIDDEN CHARS LIKE TAB OR SPACES
-angular.module('myApp', [])
-    .controler('MyCtrl', function($scope){
-       
-    });
- */   
+var app = angular.module("myApp", []);
 
-
-angular.module('myApp', [])
-    .controller('MyCtrl', function($scope){
+app.controller("MyCtrl", function($scope){
+        $scope.gender="male";
+        
+          
     
+        $scope.getGenderPrep = function(prep){
+            var word;
+            if ($scope.gender === "female"){
+                if (prep === "his")
+                    word = "her";
+                else if (prep === "him")
+                    word = "her";
+                else if (prep === "he")
+                    word = "she";
+                else
+                    word = "[unknown]";
+                    
+            }
+            else
+            {
+                word = prep;
+            }
+            return word;
+        }
+        
+        
 });
-
-/* FROM COURSE PLNKR--WORKS
-angular.module('myApp', [])
-		.controller('MyCtrl', function( $scope) {
-		 // $scope.version = '2.1';
-	  });
-      
-  */
