@@ -1,72 +1,98 @@
 
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 
   <head>
-    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.5.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.3.0/angular-messages.js"></script>
+    
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/script.js"></script>
     <title>Mad Libs</title>
   </head>
 
-  <body ng-app="">
-      <div class="bigBox">
-            <div class="clearfix">
-         <div  class="logo1">
-          <img src="images/mad-lib-happy-face.png" alt="Happy Face"/>
-      </div>
-      <div  class="logo2">
-          <img src="images/ng-mad-libs-logo.png" alt="Mad Libs Logo"/>
-                    <div class="bigFont">
-                    Automate this!
-                  </div>
-      </div>
+  <body ng-controller="ctrlInput">
+      
+      <div >
+         <div class="clearfix">
+            <div  class="logo1">
+                <img src="images/mad-lib-happy-face.png" alt="Happy Face"/>
+            </div>
+            <div  class="logo2">
+                <img src="images/ng-mad-libs-logo.png" alt="Mad Libs Logo"/>
+                <div class="bigFont">Automate this!</div>
+            </div>
  
         </div>
-        <div id="provide">
-            <h1>Provide the following words:</h1>
-        </div>
-        <div class="entry">
-            <div class="floating-box">
-                <p><input ng-model="male_name" placeholder="male name"/></p>
-                <p><input ng-model="job_title" placeholder="Job Title"/></p>
-                <p><input ng-model="tedious_task" placeholder="Tedious Task"/></p>
+        <form ng-submit="generateMadLibs()" name="genForm" >
+            <div id="provide" ng-hide="IsValidEntry">
+                <h1>Provide the following words:</h1>
             </div>
-            <div class="floating-box">
-                <p><input ng-model="dirty_task" placeholder="Dirty Task"/></p>
-                <p> <input ng-model="celebrity" placeholder="Celebrity"/></p>
-                <p> <input ng-model="useless_skill" placeholder="Useless skill"/></p>
+            <div class="entry" ng-hide="IsValidEntry">
+                <div class="floating-box">
+                    <p><input ng-model="user.male_name" name="txtName" placeholder="male name" required/></p>
+                    <p><input ng-model="user.job_title" placeholder="Job Title" required/></p>
+                    <p><input name=txtTedious_task ng-model="user.tedious_task" placeholder="Tedious Task" required ng-minlength="2" ng-maxlength="10"/></p>
+                </div>
+                <div class="floating-box">
+                    <p><input ng-model="user.dirty_task" placeholder="Dirty Task" required/></p>
+                    <p> <input ng-model="user.celebrity" placeholder="Celebrity" required/></p>
+                    <p> <input ng-model="user.useless_skill" placeholder="Useless skill" required/></p>
+                </div>
+                <div class="floating-box">
+                    <p><input ng-model="user.obnoxiuous_celebrity" placeholder="Obnoxiuous Celebrity" required/></p>
+                    <p> <input ng-model="user.huge_number" placeholder="Huge Number" type="number" required min=1000000 ></p>
+                    <p> <input ng-model="user.adjective" placeholder="Adjective" required/></p>
+                    
+                </div>
+                
             </div>
-            <div class="floating-box">
-                <p><input ng-model="obnoxiuous_celebrity" placeholder="Obnoxiuous Celebrity"/></p>
-                <p> <input ng-model="huge_number" placeholder="Huge Number"/></p>
-                <p> <input ng-model="adjective" placeholder="Adjective"/></p>
-            </div>
+              
+            <div class="validateArea posButton">
+                <button name="GenerateBtn" type="submit" ng-show="!IsValidEntry">Generate my MadLibs</button>
+                <div class="canHide">
+                    <p>IsValidEntry: {{ IsValidEntry }}</p>
+                    <p>genForm.$submitted: {{ genForm.$submitted }} </p>
+                    <p>genForm.$pristine: {{ genForm.$pristine }}</p>
+                    <p>myForm: {{ genForm.txtName.$error.required }}</p>
+                </div>
+            </div> 
             
-        </div>
-            
-        
-        <hr/>
-        <div class="workArea">
-        <p>
-            <span class="underline">{{male_name}}</span> was a <span class="underline">{{job_title}}</span> who loved technology.<br/>
-            Although he loved parts of his job, he absolutely hated<br/>
-            <span class="underline">{{tedious_task}}</span> and <span class="underline">{{dirty_task}}</span>. So, <span>{{male_name}}</span><br/>
-            met with his life mentor <span class="underline">{{celebrity}}</span> who told him to<br/>
-            learn how to <span class="underline">{{useless_skill}}</span> with Thinkful. Thinkful<br/>
-            didn't offer a course on <span class="underline">{{useless_skill}}</span> so he studied<br/>
-            programming instead.
-        </p>
-        <p>
-            What a great decision! With his new skills, <span class="underline">{{male_name}}</span> <br/>
-            built a(n) <span class="underline">{{adjective}}</span> robot named<br/>
-            <span class="underline">{{obnoxiuous_celebrity}}</span> that not only loved <span class="underline">{{dirty_task}}</span><br/>
-            but did it <span class="underline">{{huge_number}}</span> faster.
-        </p>
-        </div>
+        </form>
+         <div ng-if="genForm.$submitted" ng-messages="genForm.txtTedious_task.$error">
+             <span class="error" ng-message="required">Field is required!</span>
+             <span class="error" ng-message="minlength">That field is too short!</span>
+             <span class="error" ng-message="maxlength">Now that field is too long! Max is 10</span>
+         </div>
+
+       
+         
       </div>
-          
-  
+      
+       <form name="displayForm" ng-submit="resetForm()" ng-show="IsValidEntry">
+            <div class="workArea bigLetters" >
+                <p>
+                    <span class="underline">{{ user.male_name}}</span> was a <span class="underline">{{ user.job_title}}</span> who loved technology.<br/>
+                    Although he loved parts of his job, he absolutely hated<br/>
+                    <span class="underline">{{ user.tedious_task}}</span> and <span class="underline">{{ user.dirty_task}}</span>. So, <span>{{ user.male_name}}</span><br/>
+                    met with his life mentor <span class="underline">{{ user.celebrity}}</span> who told him to<br/>
+                    learn how to <span class="underline">{{ user.useless_skill}}</span> with Thinkful. Thinkful<br/>
+                    didn't offer a course on <span class="underline">{{ user.useless_skill}}</span> so he studied<br/>
+                    programming instead.
+                </p>
+                <p>
+                    What a great decision! With his new skills, <span class="underline">{{ user.male_name}}</span> <br/>
+                    built a(n) <span class="underline">{{ user.adjective}}</span> robot named<br/>
+                    <span class="underline">{{ user.obnoxiuous_celebrity}}</span> that not only loved <span class="underline">{{ user.dirty_task}}</span><br/>
+                    but did it <span class="underline">{{ user.huge_number}}</span> faster.
+                </p>
+          </div>
+    
+            <div class="validateArea posButton">
+                <button name="resetBtn" ng-click="reset(true)" >Start Over</button>
+            </div>
+       </form>
+ 
   </body>
 
 </html>
