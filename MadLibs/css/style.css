@@ -1,14 +1,20 @@
 /* Styles go here */
 
+body {
+    border: solid 5px;
+    padding-bottom: 5em;
+}
 .bigBox {
     border:3px solid;
 }
 .underline {
-  text-decoration: underline;
-  font-size: 20px;
+  text-decoration: underline; 
   font-weight: bold;
+  font-size: 1.5em;
 }
-
+.bigLetters {
+     font-size: 1.5em;
+}
 div.solid {
     /* border: 3px solid; */
     height: 200px;
@@ -29,22 +35,23 @@ td h1 {
 }
 .logo1 {
     text-align: center;
-    border: 3px solid;
+    border-right: 3px solid;
     float: left;
    width: 20%;;
    line-height: 30px;
 }
 
 .logo2 {
-   border: 3px solid;
+   
     float:right;
-    width:70.5%;
+    width: 65%;
     line-height: 66px;
     padding-left: 100px;
   
 }
 .clearfix {
     overflow: auto;
+    border-bottom: solid 3px;
 }
 #provide {
  
@@ -52,26 +59,21 @@ td h1 {
 }
 .entry{
   padding-left: 50px;
- overflow: auto;
+  overflow: auto;
+  border-bottom: solid 1px;
+  
 }
 .floating-box {
     float: left;
     width: 150px;
     height: 150px;
-    margin: 5px;
-    border: 3px ; 
-    padding-left: 150px;
+    margin-left: 50px;
+    
+    padding-left: 50px;
+    
     
 }
-.container {
-    border: 3px solid;
-    display: table-row;
-  
-}
 
-.row {
-    display: table-row;
-}
 
 .left, .right {
     display: table-cell;
@@ -84,4 +86,45 @@ td h1 {
     /*border: solid; */
     padding-left: 300px;
     margin: auto;
+}
+.submit_form {
+    border: solid 1px;
+}
+.validateArea{
+   
+    /*
+    position: absolute; 
+    right: 100px; */
+   /*  float: right;
+    */
+     margin-top: 1em; 
+   
+    
+}
+
+.error{
+    clear: both;
+    color: red;
+    font-size: 2em;
+    
+    margin-left: 50px;
+    margin-top: 200px;
+   
+}
+
+.canHide{
+    display: none;
+}
+
+.posButton{
+    
+    width:20%;
+    margin-left: 80%;
+}
+button {
+    
+    margin: 0.5rem;
+    font-size: 0.8em;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
 }
