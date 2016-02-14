@@ -82,11 +82,28 @@ td h1 {
 .middle{
     text-align: center;
 }
+
 .workArea {
     /*border: solid; */
     padding-left: 300px;
     margin: auto;
+    
+    border: 1px solid black;
+    overflow: hidden;
+    transition: all linear 1.5s;
 }
+
+.workArea.ng-enter,
+.workArea.ng-leave.ng-leave-active
+{
+    max-height: 0;
+}
+
+.workArea.ng-leave,
+.workArea.ng-enter.ng-enter-active  {
+    max-height: 46em;
+}
+
 .submit_form {
     border: solid 1px;
 }
@@ -97,7 +114,7 @@ td h1 {
     right: 100px; */
    /*  float: right;
     */
-     margin-top: 1em; 
+     margin-top: 2em; 
    
     
 }

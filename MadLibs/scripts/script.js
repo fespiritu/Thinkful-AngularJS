@@ -1,5 +1,5 @@
 
-angular.module('myApp',['ngMessages'])
+angular.module('myApp',['ngMessages','ngAnimate'])
     .controller('ctrlInput', function($scope){
         $scope.IsValidEntry = false;
        

@@ -3,8 +3,9 @@
 <html ng-app="myApp">
 
   <head>
-    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.5.0/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.3.0/angular-messages.js"></script>
+   <script src="https://code.angularjs.org/1.5.0/angular.js"></script>
+    <script   src="https://code.angularjs.org/1.5.0/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.0/angular-messages.js"></script>
     
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/script.js"></script>
@@ -69,30 +70,33 @@
          
       </div>
       
-       <form name="displayForm" ng-submit="resetForm()" ng-show="IsValidEntry">
-            <div class="workArea bigLetters" >
-                <p>
-                    <span class="underline">{{ user.male_name}}</span> was a <span class="underline">{{ user.job_title}}</span> who loved technology.<br/>
-                    Although he loved parts of his job, he absolutely hated<br/>
-                    <span class="underline">{{ user.tedious_task}}</span> and <span class="underline">{{ user.dirty_task}}</span>. So, <span>{{ user.male_name}}</span><br/>
-                    met with his life mentor <span class="underline">{{ user.celebrity}}</span> who told him to<br/>
-                    learn how to <span class="underline">{{ user.useless_skill}}</span> with Thinkful. Thinkful<br/>
-                    didn't offer a course on <span class="underline">{{ user.useless_skill}}</span> so he studied<br/>
-                    programming instead.
-                </p>
-                <p>
-                    What a great decision! With his new skills, <span class="underline">{{ user.male_name}}</span> <br/>
-                    built a(n) <span class="underline">{{ user.adjective}}</span> robot named<br/>
-                    <span class="underline">{{ user.obnoxiuous_celebrity}}</span> that not only loved <span class="underline">{{ user.dirty_task}}</span><br/>
-                    but did it <span class="underline">{{ user.huge_number}}</span> faster.
-                </p>
-          </div>
-    
-            <div class="validateArea posButton">
-                <button name="resetBtn" ng-click="reset(true)" >Start Over</button>
-            </div>
-       </form>
- 
+      <div class="workArea bigLetters" ng-if="IsValidEntry" >
+        <form name="displayForm" ng-submit="resetForm()" >
+                
+                    <p>
+                        <span class="underline">{{ user.male_name}}</span> was a <span class="underline">{{ user.job_title}}</span> who loved technology.<br/>
+                        Although he loved parts of his job, he absolutely hated<br/>
+                        <span class="underline">{{ user.tedious_task}}</span> and <span class="underline">{{ user.dirty_task}}</span>. So, <span>{{ user.male_name}}</span><br/>
+                        met with his life mentor <span class="underline">{{ user.celebrity}}</span> who told him to<br/>
+                        learn how to <span class="underline">{{ user.useless_skill}}</span> with Thinkful. Thinkful<br/>
+                        didn't offer a course on <span class="underline">{{ user.useless_skill}}</span> so he studied<br/>
+                        programming instead.
+                    </p>
+                    <p>
+                        What a great decision! With his new skills, <span class="underline">{{ user.male_name}}</span> <br/>
+                        built a(n) <span class="underline">{{ user.adjective}}</span> robot named<br/>
+                        <span class="underline">{{ user.obnoxiuous_celebrity}}</span> that not only loved <span class="underline">{{ user.dirty_task}}</span><br/>
+                        but did it <span class="underline">{{ user.huge_number}}</span> faster.
+                    </p>
+            
+        
+        </form>
+    </div>
+
+
+    <div class="validateArea posButton" ng-if="IsValidEntry">
+        <button name="resetBtn" ng-click="reset(true)" >Start Over</button>
+    </div>
   </body>
 
 </html>
