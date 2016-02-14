@@ -1,0 +1,97 @@
+
+/*
+.clearfix {
+    overflow: auto;
+}
+*/
+
+.header h1{
+    font-size: 4em;
+    text-align: center;
+}
+
+.MealDetails, .CustomerCharges, .MyEarningsInfo {
+    border: solid 2px;
+}
+
+.header2{
+    border-bottom: solid 2px;
+    font-size: 2em;
+    padding-left: 10px;
+}
+.MealDetails {
+    width: 23em;
+    float: left;
+    margin-left: 20%;
+    height: 300px;
+   
+}
+
+.workArea{
+    padding-left: 30px;
+    padding-top: 10px;
+}
+.rightSide {
+     margin-left: 50%;
+     width: 20em;
+     /* border: solid 1px; */
+}
+.CustomerCharges {
+    width: 20em;
+    margin-bottom: 50px;
+   
+}
+
+.MyEarningsInfo {
+    width: 20em;
+   
+}
+
+.inputLabel{
+    text-align: right;
+    border: solid 1px;
+}
+
+td:first-child {
+    text-align: right;
+    
+}
+
+#rowButtonRow td{
+    padding-top: 100px;
+}
+#tipRow{
+    border-top: solid 1px;
+}
+
+.spacer{
+    
+    width: 8em;
+}
+.resetRow{
+    clear: both;
+  
+    width: 50px;
+    margin-left: 80%;
+}
+
+button{
+    border-radius: 4px;
+    font-size: 1em;
+    box-shadow: 5px 5px gray;
+    border: solid 1px;
+    background-color: white;
+    padding: 8px 20px;
+    font-weight: bold;
+}
+button:hover {
+    background-color: gray;
+}
+
+.resultArea{
+    display: none;
+}
+
+.smallInput {
+    width: 30px;
+}
