@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Waitstaff Calculator</title>
+        <script src="https://code.angularjs.org/1.5.0/angular.js"></script>
+        <link rel="stylesheet" href="css/style.css"/>
+        
+    </head>
+    <body ng-controller="myCtrl">
+        
+        <div class="header">
+            <h1>Waitstaff Calculator</h1>
+        </div>
+        
+        <div class="MealDetails">
+            <div class="header2">Enter the Meal Details</div>
+            
+            <form ng-submit="submit()" name="workForm">
+                <div class="workArea">
+                    <table>
+                        <tr>
+                            <td>Base Meal Price: $</td>
+                            <td><input type="number" ng-model="Meal.base_meal_price" required/></td>
+                        </tr>
+                            <tr>
+                            <td>Tax Rate: %</td>
+                            <td><input class="smallInput"  type="number" ng-model="Meal.tax_rate" required/></td>
+                        </tr>
+                            <tr>
+                            <td>Tip Percentage: %</td>
+                            <td><input class="smallInput"  type="number" ng-model="Meal.tip_whole" required/></td>
+                        </tr>
+                        <tr id="rowButtonRow">
+                            <td><button type="submit">Submit</button></td>
+                            <td><button ng-click="cancelMeal()">Cancel</button></td>
+                        </tr>
+                    </table>
+                                    
+                </div>               
+            </form>
+
+
+        </div>
+        
+        <div class="rightSide">
+            <div class="CustomerCharges">
+                <div class="header2">Customer Charges</div>
+                
+                <div class="workArea">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td><div class="spacer"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td>{{ Customer.subtotal | currency}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tip</td>
+                            <td>{{ Customer.tip | currency }}</td>
+                        </tr>
+                        <tr>
+                            <td id="tipRow">Total</td>
+                            <td id="tipRow">{{ Customer.total | currency }}</td>
+                        </tr>
+                    </table>
+                    
+                    
+                </div>
+                
+                
+            </div>
+            
+            <div class="MyEarningsInfo">
+                <div class="header2">My Earnings Info</div>
+                
+                <div class="workArea">
+                    <table>
+                        <tr>
+                            <td>Tip Total:</td>
+                            <td>{{ EarningsInfo.tip_total | currency }}</td>
+                        </tr>
+                        <tr>
+                            <td>Meal count:</td>
+                            <td>{{ EarningsInfo.meal_count }}</td>
+                        </tr>
+                        <tr>
+                            <td>Average Tip Per Meal:</td>
+                            <td>{{ EarningsInfo.avg_tip_per_meal | currency }}</td>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="resetRow">
+            <button ng-click="reset(true)">Reset</button>
+        </div>
+        
+        <div class="resultArea">
+            <p>Meal.base_meal_price: {{ Meal.base_meal_price }}</p>
+            <p>Meal.tax_rate: {{ Meal.tax_rate }}</p>
+            <p>Meal.tip_pct: {{ Meal.tip_whole }}</p>  
+            <p/>
+            <p>Tax_Amount: {{ Meal.tax_amount }}   </p>  
+            
+            <hr/>
+            <p>workForm.$submitted: {{ workForm.$submitted }} </p>
+            <p>workForm.$pristine: {{ workForm.$pristine }}</p>     
+        </div>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
