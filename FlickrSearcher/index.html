@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <title>Flickr Searcher</title>
+        <link href="css/style.css" rel="stylesheet"/>
+        <script src="https://code.angularjs.org/1.5.0/angular.js"></script>
+        
+    </head>
+    <body ng-controller="myCtrl">
+        <div class="header center">
+            <h1>Flickr Searcher</h1>
+        </div>
+        <form ng-submit="submit()" name="flickrForm">
+           <div class="submitRow">
+                <input type="text" ng-model="search_text" placeholder="Enter a tag to search for..." required/>
+                <button type="submit">Submit</button>
+           </div>
+           <div class="subHeader1" ng-if="search_text">
+                <h3>Searching Instagram for photos logged with "{{ search_text }}"</h3>
+           </div>
+        </form>
+        
+        
+        
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

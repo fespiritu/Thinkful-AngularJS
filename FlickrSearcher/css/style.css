@@ -1,0 +1,42 @@
+
+.header{
+    font-size: 3em;
+    
+    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+
+.submitRow {
+    text-align: center; 
+   
+      
+}
+
+.submitRow input {
+    width: 300px;
+    font-size: 1em;
+    border: solid 2px;
+}
+
+button {
+    border-radius: 4px;
+    font-size: 1em;
+    box-shadow: 3px 3px gray;
+    background-color: white;
+    padding: 3px 20px;
+    font-weight: bold;
+    
+    
+}
+button:hover {
+    background-color: gray;
+}
+.subHeader1 {
+    text-align: center;
+   
+}
