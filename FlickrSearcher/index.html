@@ -27,7 +27,13 @@
         </div>
         
         <div class="imagesCarousel">
-            {{images}}
+            <ul>
+                <div ng-repeat="ph in images.photos.photo">
+                 <li>{{ph.title}}</li>
+                 <li><img ng-src="https://farm{{ph.farm}}.staticflickr.com/{{ph.server}}/{{ph.id}}_{{ph.secret}}.jpg" alt="{{ph.title}}"/>
+                 }}
+                </div>
+            </ul>
         </div>
         
         <script src="scripts/script.js"></script>

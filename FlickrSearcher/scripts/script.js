@@ -14,11 +14,11 @@ angular.module('myApp',[])
         
          var config = {
                 
-                method: 'flickr.photos.search',
-                api_key: 'f9791ef32ee97c1ddce53c2a7941a7b8',
+               // method: 'flickr.photos.search',
+               // api_key: 'f9791ef32ee97c1ddce53c2a7941a7b8',
                 tags: tag,
-                format: 'json',
-                nojsoncallback: 1
+               // format: 'json',
+               // nojsoncallback: 1
             }
             // alert('config: ' + req.url);
      
@@ -27,11 +27,12 @@ angular.module('myApp',[])
          
          //$scope.httpError = 'Error in searching ' + tag;
          
-         $http.get('https://api.flickr.com/services/rest', config
+         $http.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=' + tag + '&api_key=f9791ef32ee97c1ddce53c2a7941a7b8&format=json&nojsoncallback=1'
+         
          )
          .then(function(response){
              $scope.images = response.data;
-             var count = 2; //$scope.images.photo;
+             var count = $scope.images.photos.total;
              alert ('count: ' + count);
              
              $scope.notifySearchingMsg = "We found " + count + " results for '" +  tag + "'";
