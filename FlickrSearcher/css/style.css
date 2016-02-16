@@ -40,3 +40,16 @@ button:hover {
     text-align: center;
    
 }
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.imagesCarousel {
+    text-align: center;
+    width: 80%;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
