@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <title>Flickr Searcher</title>
+        <link href="css/style.css" rel="stylesheet"/>
+        <script src="https://code.angularjs.org/1.2.18/angular.js"></script>
+           <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+ 
+    </head>
+    <body ng-controller="myCtrl">
+        <div class="header center">
+            <h1>Flickr Searcher</h1>
+        </div>
+        <form ng-submit="SearchFlickr()" name="flickrForm">
+           <div class="submitRow">
+                <input name="txtSearch" type="text" ng-model="search_tag" placeholder="Enter a tag to search for..." required/>
+                <button type="submit">Submit</button>
+           </div>
+           
+        </form>
+        
+        <div class="subHeader1" ng-if="notifySearchingMsg != '' ">
+            <h3>{{ notifySearchingMsg }}</h3>
+        </div>
+        
+        <div class="error" ng-if="httpError != '' ">
+            <h3>{{ httpError }} </h3>
+        </div>
+        
+        <div class="imagesCarousel">
+            <div class="pics animate"  ng-repeat="ph in images.photos.photo">
+                <a href="https://farm{{ph.farm}}.staticflickr.com/{{ph.server}}/{{ph.id}}_{{ph.secret}}.jpg" onmouseover="{{ ph.title }}" target="_blank"><img  ng-src="https://farm{{ph.farm}}.staticflickr.com/{{ph.server}}/{{ph.id}}_{{ph.secret}}.jpg" alt="{{ph.title}}"/></a>
+            </div>
+        </div>
+        
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
