@@ -33,7 +33,7 @@ angular.module('myApp',[])
          .then(function(response){
              $scope.images = response.data;
              var count = $scope.images.photos.total;
-             alert ('count: ' + count);
+            // alert ('count: ' + count);
              
              $scope.notifySearchingMsg = "We found " + count + " results for '" +  tag + "'";
          }, function error(response){

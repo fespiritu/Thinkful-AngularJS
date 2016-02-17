@@ -27,13 +27,9 @@
         </div>
         
         <div class="imagesCarousel">
-            <ul>
-                <div ng-repeat="ph in images.photos.photo">
-                 <li>{{ph.title}}</li>
-                 <li><img ng-src="https://farm{{ph.farm}}.staticflickr.com/{{ph.server}}/{{ph.id}}_{{ph.secret}}.jpg" alt="{{ph.title}}"/>
-                 }}
-                </div>
-            </ul>
+            <div class="pics"  ng-repeat="ph in images.photos.photo">
+                <a href="https://farm{{ph.farm}}.staticflickr.com/{{ph.server}}/{{ph.id}}_{{ph.secret}}.jpg" onmouseover="{{ ph.title }}" target="_blank"><img  ng-src="https://farm{{ph.farm}}.staticflickr.com/{{ph.server}}/{{ph.id}}_{{ph.secret}}.jpg" alt="{{ph.title}}"/></a>
+            </div>
         </div>
         
         <script src="scripts/script.js"></script>

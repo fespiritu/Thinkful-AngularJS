@@ -53,3 +53,13 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+.pics {
+    
+    float: left;
+    margin: 5px;
+    height: 300px;
+    max-width: 100%;
+    
+    overflow: auto;
+}
