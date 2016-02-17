@@ -1,5 +1,5 @@
 
-angular.module('myApp',[])
+angular.module('myApp',['ngAnimate'])
     .controller('myCtrl', function($scope,$http,$q){
         
      $scope.httpError = '';
