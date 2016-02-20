@@ -4,10 +4,35 @@
     overflow: auto;
 }
 */
-
+body {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .header h1{
     font-size: 4em;
     text-align: center;
+    
+}
+ul {
+    
+    text-align: center;
+    margin-top: -20px;
+}
+ul li {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 1.5em;
+    
+}
+a:active {
+    text-decoration: none;
+    color: red;
+    
+}
+.instructions{
+    margin-top: 3em;
+    
 }
 
 .MealDetails, .CustomerCharges, .MyEarningsInfo {
@@ -19,11 +44,20 @@
     font-size: 2em;
     padding-left: 10px;
 }
+.container {
+   margin-top: 3em;
+    width: 23em;
+    margin-left: auto;
+    margin-right: auto;
+}
 .MealDetails {
     width: 23em;
-    float: left;
+   /*  float: left; 
     margin-left: 20%;
-    height: 300px;
+    */
+    
+    height: 16em;
+    
    
 }
 
@@ -31,19 +65,20 @@
     padding-left: 30px;
     padding-top: 10px;
 }
+/*
 .rightSide {
-     margin-left: 50%;
-     width: 20em;
-     /* border: solid 1px; */
-}
+    margin-top: 2em;
+    width: 27em;
+     border: solid 1px; 
+}*/
 .CustomerCharges {
-    width: 20em;
-    margin-bottom: 50px;
+    width: 23em;
+    margin-top: 2em;
    
 }
 
 .MyEarningsInfo {
-    width: 20em;
+    width: 23em;
    
 }
 
@@ -56,9 +91,13 @@ td:first-child {
     text-align: right;
     
 }
-
+td {
+    
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
 #rowButtonRow td{
-    padding-top: 100px;
+    padding-top: 2em;
 }
 #tipRow{
     border-top: solid 1px;
@@ -69,10 +108,9 @@ td:first-child {
     width: 8em;
 }
 .resetRow{
-    clear: both;
-  
-    width: 50px;
-    margin-left: 80%;
+    margin-top: 3em;
+    text-align: center;
+   
 }
 
 button{
@@ -90,6 +128,7 @@ button:hover {
 
 .resultArea{
     display: none;
+    padding-top: 5em;
 }
 
 .smallInput {
