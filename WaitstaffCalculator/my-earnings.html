@@ -1,0 +1,30 @@
+
+        <div class="container" ng-controller="EarningsCtrl">
+           <div class="MyEarningsInfo">
+                <div class="header2">My Earnings Info</div>
+                
+                <div class="workArea">
+                    <table>
+                        <tr>
+                            <td>Tip Total:</td>
+                            <td>{{ EarningsInfo.tip_total | currency }}</td>
+                        </tr>
+                        <tr>
+                            <td>Meal count:</td>
+                            <td>{{ EarningsInfo.meal_count }}</td>
+                        </tr>
+                        <tr>
+                            <td>Average Tip Per Meal:</td>
+                            <td>{{ EarningsInfo.avg_tip_per_meal | currency }}</td>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+            </div>
+            
+ 
+            <div class="resetRow">
+                <button ng-click="reset(true)">Reset</button>
+            </div>
+        </div>
