@@ -1,0 +1,61 @@
+
+body {
+    width: 800px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.clearfix {
+    overflow: auto;
+}
+.company {
+   
+    width: 100px;
+    margin-left: 50px;
+    padding-top: 10px;
+    
+}
+.mainNav{
+   
+    max-width: 1350px;
+}
+.promos{
+   
+    display: block;
+    text-align: right;
+}
+
+.searchContainer{
+    height: 74px;
+    
+}
+.searchInput {
+   
+   position: absolute;
+   width: 50%;
+   /* top: 50%;
+    transform: translate(0,-50%); */
+}
+#logo1 {
+    height: 50px;
+    position: absolute;
+    z-index: 100;
+    
+}
+.searchContainer h2 {
+    padding-left: 50px;
+}
+.navChoices{
+  
+    background-color: gray;
+   
+    padding: 10px;
+    
+}
+.mainNav ul li{
+    display: inline-block;
+    margin-right: 10px;
+    
+   
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="OWMApp">
+    <header>
+        <title>Open Weather App</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="../css/style.css"/>
+    </header>
+    <body>
+       <nav class="mainNav">
+            
+            <div class="inner-header-wrap">
+                <div class="searchContainer">
+                    <a href="index.html"><img id="logo1" src="../images/karma-logo copy.svg" alt="Open Weather"/></a>
+                    <h2>Karma</h2>
+                    
+                </div>
+                
+            </div>
+            
+             <div class="navChoices">
+                 <ul>
+                    <li><a href="#/">Home</a></li>                   
+                    <li><a href="#/cities/Irvine">Irvine</a></li>
+                    <li><a href="#/cities/New York">New York</a></li>
+                    <li><a href="#/cities/NotOnList">Unsupported City</a></li>
+                </ul>
+             </div>
+                
+        </nav>
+        <div ng-view></div>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="owm-app.js"></script>
+    </body>
+</html>
