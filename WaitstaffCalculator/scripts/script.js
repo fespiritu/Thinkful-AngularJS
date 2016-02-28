@@ -1,8 +1,18 @@
 
-angular.module('myApp',['ngRoute'])
-    .run(function($rootScope, $location){
+angular.module('myApp',['ngRoute', 'ngAnimate'])
+    .run(function($rootScope, $location, $timeout){
         $rootScope.$on('$routeChangeError', function(){
             $location.path('/');    //we want to go to index/home on error per requirement
+        });
+        
+        //new changes for animatioin
+        $rootScope.$on('$routeChangeStart', function(){
+            $rootScope.isLoading = true;
+        });
+        $rootScope.$on('$routeChangeSuccess', function() {
+           $timeout(function(){
+               $rootScope.isLoading = false;
+           }, 1000); 
         });
     })
     //.value('isExecuted',true)
@@ -92,8 +102,8 @@ angular.module('myApp',['ngRoute'])
             $rootScope.EarningsInfo = angular.copy($rootScope.EarningsInfoMaster);
             
             if (blnSetPristine === true){
-                //$rootScope.Meal.tax_amount = 0;
-                $rootScope.workForm.$setPristine();
+                //disabled since workForm is under NewMeal
+              //  $rootScope.workForm.$setPristine();
             }
             else{   
                 //user resets all                     
@@ -104,11 +114,7 @@ angular.module('myApp',['ngRoute'])
       
     })
     .controller('IndexCtrl', function($rootScope){
-        
-        
-    })
-    .controller('HomeCtrl', function($rootScope){
-      //  $scope.message = $scope.EarningsInfoMaster.tip_total;
+         //  $scope.message = $scope.EarningsInfoMaster.tip_total;
        // var isExecuted = null;
         
         // $scope.Meal.Tax_Amount = 1 * 3; // $scope.Meal.base_meal_price * $scope.Meal.tax_rate ;
@@ -137,6 +143,10 @@ angular.module('myApp',['ngRoute'])
        
        //$scope.reset(false);
         
+        
+    })
+    .controller('HomeCtrl', function($rootScope){
+     
       
     });
    
