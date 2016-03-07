@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="ccApp">
+    <head>
+        <title>Countries And Captials</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="./css/cc-style.css"/>
+        <link rel="stylesheet" href="./bower_components/angular-scrollable-table/scrollable-table.css"/>
+        <link rel="stylesheet" href="./countriesView/ccCountries.css"/>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#"><img src="./images/karma-logo copy.svg" /></a>
+                <h1>Countries & Capitals</h1>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/countries">Browse Countries</a></li>
+                    <!--Use for testing: <li><a href="#/countries/US">Country</a></li>-->
+                </ul>
+            </div>
+        </div>
+        <hr/>
+       
+        
+        <div class="animate-view-container" ng-class="{loading: isLoading}">
+            <div ng-view class="animate-view"></div>
+        </div>
+        
+        <script src="./bower_components/jQuery/dist/jquery.js" type="text/javascript"></script>
+        
+        <script src="./bower_components/angular/angular.js" type="text/javascript"></script>
+        <script src="./bower_components/angular-route/angular-route.js" type="text/javascript"></script>
+        <script src="./bower_components/angular-animate/angular-animate.js" type="text/javascript"></script>
+        <script src="./bower_components/angular-scrollable-table/angular-scrollable-table.js" type="text/javascript"></script>
+        
+        <script src="./ccApp.js" type="text/javascript"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,110 @@
+body {
+  
+    margin-right: 20%;
+    margin-left: 20%;
+    
+    
+}
+.navbar {
+    height: 5em;
+}
+.logo img{
+    border: solid 1px;
+    height: 50px;
+    float: left;
+    margin-right: 2em;
+}
+
+.logo h1 {
+    padding-top: 0.4em;
+}
+.links {
+   
+   width: 15em;
+   float: right;
+   margin-top: -3.7em;
+}
+#countryCode {
+    width: 110px;
+}
+#areaInSqKm{
+    width: 110px;
+}
+#continent{
+    width: 90px;
+}
+.links ul li {
+     display: inline-block;
+     margin-right: 0.5em;
+     
+}
+
+/* Country */
+.country-table {
+    border: solid 1px;
+    font-size: 1.5em;
+}
+.country-table td {
+    
+    width: 45em;
+}
+.country-table td:first-child {
+    text-align: right;
+    padding-right: 1.5em;
+}
+
+#neighbor-ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
+#myImage {
+    width: 250px;
+    height: 150px;;
+}
+.map_flag{
+    border: solid 1px;
+    width: 600px;
+    margin-left: 50px;
+}
+
+
+/* ngAnimate section */
+.loading {
+  position:relative;
+  height:100%;
+}
+.loading:before {
+  position:absolute;
+  content:"";
+  left:0;
+  bottom:0;
+  right:0;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,0.9) no-repeat center center;
+  background-image: url('../images/loading-animation.gif');
+}
+
+.animate-view.ng-enter,
+    .animate-view.ng-leave {
+        transition:1s linear all;
+    }
+
+.animate-view-container { position: relative; min-height: 100%;}
+.animate-view.ng-enter, .animate-view.ng-leave {
+    transition: 1s linear all;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #eee;
+}
+
+
+.animate-view.ng-enter { opacity: 0; z-index: 100;}
+.animate-view.ng-enter.ng-enter-active { opacity: 1;}
+.animate-view.ng-leave { opacity: 1; z-index: 99;}
+.animate-view.ng-leave.ng-leave-active { opacity: 0;}
+
+/* end ngAnimate */
