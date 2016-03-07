@@ -1,0 +1,22 @@
+{
+  "name": "countries-capital-app",
+  "version": "1.0.0",
+  "description": "Display a country infor from geonames.org.",
+  "main": "ccApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fespiritu/Thinkful-AngularJS/tree/master/countries-capital-app"
+  },
+  "keywords": [
+    "Countries"
+  ],
+  "author": "Ferdinand Espiritu",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^3.0.0"
+  }
+}

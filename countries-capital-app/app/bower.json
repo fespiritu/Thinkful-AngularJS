@@ -1,0 +1,26 @@
+{
+  "name": "countries-capital-app",
+  "homepage": "https://github.com/fespiritu/Thinkful-AngularJS",
+  "authors": [
+    "fespiritu"
+  ],
+  "description": "Get countries via REST",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "angular-scrollable-table": "*",
+    "angular": "^1.5.0",
+    "jquery": "^2.2.1"
+  }
+}

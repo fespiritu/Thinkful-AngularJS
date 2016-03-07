@@ -1,0 +1,31 @@
+<div ng-controller="CountriesCtrl" class="test-container"  >
+       <header>
+         
+      </header>
+      <scrollable-table watch="countryInfoList.geonames" resizable>
+        <table class="table">
+          <thead>
+          <tr>
+            <th col="countryName">Name</th>
+            <th id="countryCode">Country Code</th>
+            <th col="capital">Capital</th>
+            <th id="areaInSqKm">Area in km2</th>
+            <th col="population">Population</th>
+            <th id="continent">Continent</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="response in countryInfoList.geonames | orderBy : 'countryName'" row-id="{{ response.countryName }}"
+            ng-class="{'info': selected == response.countryName}" ng-click="setSelected(response)">
+            <td>{{ response.countryName }}</td>
+            <td>{{ response.countryCode }}</td>
+            <td>{{ response.capital }}</td>
+            <td>{{ response.areaInSqKm | number }}</td>
+            <td>{{ response.population | number }}</td>
+            <td>{{ response.continent }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </scrollable-table>
+      
+</div>

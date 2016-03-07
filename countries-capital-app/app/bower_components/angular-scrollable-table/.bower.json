@@ -1,0 +1,36 @@
+{
+  "name": "angular-scrollable-table",
+  "main": [
+    "angular-scrollable-table.js",
+    "scrollable-table.css"
+  ],
+  "homepage": "https://github.com/alalonde/angular-scrollable-table",
+  "authors": [
+    "Alec LaLonde <alec@boxelderweb.com>"
+  ],
+  "description": "A fixed-header scrollable table for AngularJS, featuring resizable columns and sorting",
+  "keywords": [
+    "scrollable-table"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2"
+  },
+  "_release": "94e9ef4dc6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "94e9ef4dc628b1ed51c958348bc1b6c1c33a9390"
+  },
+  "_source": "git://github.com/alalonde/angular-scrollable-table.git",
+  "_target": "*",
+  "_originalSource": "angular-scrollable-table",
+  "_direct": true
+}
