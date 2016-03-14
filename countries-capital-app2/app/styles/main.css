@@ -1,0 +1,213 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    margin-top: 20px;
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/*mine*/
+.info {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+/*
+table tr td {
+    border:solid 1px;
+}
+*/
+td:first-child{
+    text-align: right;
+    padding-right: 30px;
+}
+
+body {
+  
+    margin-right: 20%;
+    margin-left: 20%;
+    
+    
+}
+.navbar {
+    height: 5em;
+}
+.logo img{
+    border: solid 1px;
+    height: 50px;
+    float: left;
+    margin-right: 2em;
+}
+
+.logo h1 {
+    padding-top: 0.4em;
+}
+.links {
+   
+   width: 15em;
+   float: right;
+   margin-top: -3.7em;
+}
+#countryCode {
+    width: 110px;
+}
+#areaInSqKm{
+    width: 110px;
+}
+#continent{
+    width: 90px;
+}
+.links ul li {
+     display: inline-block;
+     margin-right: 0.5em;
+     
+}
+
+/* Country */
+.country-table {
+   /* border: solid 1px; */
+    font-size: 1.5em;
+}
+.country-table td {
+    
+    width: 45em;
+}
+.country-table td:first-child {
+    text-align: right;
+    padding-right: 1.5em;
+}
+
+#neighbor-ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
+#myImage {
+    width: 250px;
+    height: 150px;;
+}
+.map_flag{
+    border: solid 1px;
+    width: 600px;
+    margin-left: 50px;
+}
+
+
+/* ngAnimate section */
+.loading {
+  position:relative;
+  height:100%;
+}
+.loading:before {
+  position:absolute;
+  content:"";
+  left:0;
+  bottom:0;
+  right:0;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,0.9) no-repeat center center;
+  background-image: url('../images/loading-animation.gif');
+}
+
+.animate-view.ng-enter,
+    .animate-view.ng-leave {
+        transition:1s linear all;
+    }
+
+.animate-view-container { position: relative; min-height: 100%;}
+.animate-view.ng-enter, .animate-view.ng-leave {
+    transition: 1s linear all;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #eee;
+}
+
+
+.animate-view.ng-enter { opacity: 0; z-index: 100;}
+.animate-view.ng-enter.ng-enter-active { opacity: 1;}
+.animate-view.ng-leave { opacity: 1; z-index: 99;}
+.animate-view.ng-leave.ng-leave-active { opacity: 0;}
+
+/* end ngAnimate */

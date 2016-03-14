@@ -1,0 +1,50 @@
+<div  class="test-container"  ng-controller='CountriesCtrl'>
+       
+      <div>
+          <label for="letterFilter">Filter</label>
+          <td><input type="text" ng-model="letterFilter" placeholder="Filter Letter"/>
+          </td>
+      </div>
+      <!--
+        <table ng-init="letters=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']">
+            <tr>
+                <td ng-repeat="letter in letters">
+                    <a href="#" ng-model="letterFilter">{{ letter }}</a>
+                </td>
+                </tr>
+        </table>
+        -->
+      <scrollable-table watch="countryInfoList.geonames" resizable>
+
+        <table class="table">
+            
+          <thead>
+                <tr>
+                    <th col="countryName">Name</th>
+                    <th id="countryCode">Country Code</th>
+                    <th col="capital">Capital</th>
+                    <th id="areaInSqKm">Area in km2</th>
+                    <th col="population">Population</th>
+                    <th id="continent">Continent</th>
+                </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="response in countryInfoList.geonames | orderBy : 'countryName' | filter:letterFilter" row-id="{{ response.countryName }}"
+            ng-class="{'info': selected == response.countryName}" ui-sref="country({country: response.countryCode})">
+            <td>{{ response.countryName }}</td>
+            <td>{{ response.countryCode }}</td>
+            <td>{{ response.capital }}</td>
+            <td>{{ response.areaInSqKm | number }}</td>
+            <td>{{ response.population | number }}</td>
+            <td>{{ response.continent }}</td>
+          </tr>
+          </tbody>
+        </table>
+        
+      </scrollable-table>
+      
+      <!--
+      <button class="btn btn-primary" type="button" onclick="scroll(0,0)">Back to Top</button>
+    -->
+      
+</div>
